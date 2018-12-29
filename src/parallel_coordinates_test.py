@@ -5,8 +5,13 @@ Created on Fri Dec 28 18:26:48 2018
 @author: andyj
 """
 import pandas as pd
+import plotly 
 import plotly.plotly as py
 import plotly.graph_objs as go
+
+#Plotly credentials
+plotly.tools.set_credentials_file(username='Andyjtrick', api_key='isBFnNsuFm01xug6tCEw')
+
 
 df = pd.read_csv('./data/test.csv')
 
@@ -27,8 +32,11 @@ data = [
             dict(range = [0,0.5],
                 label = 'Efficiency', values = df['Efficiency']),
             dict(range = [75, 100],
-                label = 'Transparency', values = df['Accountability and Transparency'])
-        ])
+                label = 'Transparency', values = df['Accountability and Transparency']),
+                 dict(range = [10000000, 800000000],
+                label = 'Annual Contribution', values = df['Annual Contributions'])
+        ]),
+            showlegend = True
     )
 ]
 
@@ -38,4 +46,4 @@ layout = go.Layout(
 )
 
 fig = go.Figure(data = data, layout = layout)
-py.iplot(fig, filename = 'parcoords-basic')
+py.iplot(fig, filename = 'Charity_Rough')
