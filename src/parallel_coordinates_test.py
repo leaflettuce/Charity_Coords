@@ -27,6 +27,7 @@ data = [
                                 [1, '#DE9733']]),  ## animal rights
         dimensions = list([
             dict(range = [70,100],
+                 constraintrange = [93,100],
                 label = 'Charity Navigator Rating', values = df['Rating']),
             dict(range = [10000000, 800000000],
                 label = 'Annual Contribution', values = df['Annual Contributions']),
