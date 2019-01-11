@@ -56,31 +56,47 @@ layout = go.Layout(
     title='Charity Comparison Plot'
 )
 
+# Categorical Labels
 labels = [
         dict(xref='paper', yref='paper', x=0.35, y=-0.085,
                               xanchor='center', yanchor='top',
-                              text="Alex's Lemonade Stand",
+                              text="Health",
                               font=dict(family='Arial',
                                         size=14,
                                         color='#AA1B13'),
                               showarrow=False),
         dict(xref='paper', yref='paper', x=0.5, y=-0.085,
                               xanchor='center', yanchor='top',
-                              text="National Immigration Law Center",
+                              text="Social Services",
                               font=dict(family='Arial',
                                         size=14,
                                         color='#6C9E12'),
                               showarrow=False),
         dict(xref='paper', yref='paper', x=0.65, y=-0.085,
                               xanchor='center', yanchor='top',
-                              text="Doctor's Without Borders",
+                              text="Humanitarian",
                               font=dict(family='Arial',
                                         size=14,
                                         color='#0D5F67'),
+                              showarrow=False),
+        dict(xref='paper', yref='paper', x=0.20, y=-0.085,
+                              xanchor='center', yanchor='top',
+                              text="Environmental",
+                              font=dict(family='Arial',
+                                        size=14,
+                                        color='#69178C'),
+                              showarrow=False),
+        dict(xref='paper', yref='paper', x=0.80, y=-0.085,
+                              xanchor='center', yanchor='top',
+                              text="Animal Rights",
+                              font=dict(family='Arial',
+                                        size=14,
+                                        color='#DE9733'),
                               showarrow=False)
                               
         ]
 layout['annotations'] = labels
 
+# print the plot
 fig = go.Figure(data = data, layout = layout)
 py.iplot(fig, filename = 'Charity_Rough')
